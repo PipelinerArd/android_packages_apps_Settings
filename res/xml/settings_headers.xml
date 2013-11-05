@@ -17,6 +17,15 @@
 <preference-headers
         xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Mods -->
+    <header android:title="@string/header_category_rom_settings" />
+
+    <!-- Interface -->
+    <header
+        android:id="@+id/interface_settings"
+        android:icon="@drawable/ic_settings_interface"
+        android:fragment="com.android.settings.slim.InterfaceSettings"
+        android:title="@string/interface_settings_title" />
 
     <!-- WIRELESS and NETWORKS -->
     <header android:id="@+id/wireless_section"
