@@ -121,10 +121,6 @@
     <!-- Lockscreen widgets -->
     <string name="security_maximize_widgets_title">Maximize widgets</string>
 
-    <!-- Whether to display the IME switcher notifcation -->
-    <string name="ime_switcher_notify">Selector notification</string>
-    <string name="ime_switcher_notify_summary">Display input method selector notification</string>
-
     <!-- Setting checkbox title for root access -->
     <string name="root_access">Root access</string>
     <string name="root_access_warning_title">Allow root access?</string>
@@ -171,4 +167,5 @@
     <string name="lockscreen_wallpaper_settings_title">Lockscreen Wallpapers</string>
     <string name="bootanim_settings_title">Boot Animations</string>
     <string name="soundpack_settings_title">Sound Packs</string>
+
 </resources>
