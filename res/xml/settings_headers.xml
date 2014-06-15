@@ -23,7 +23,7 @@
     <!-- Interface -->
     <header
         android:id="@+id/interface_settings"
-        android:icon="@drawable/ic_settings_interface"
+        android:icon="@drawable/ic_settings_rom_settings"
         android:fragment="com.android.settings.slim.InterfaceSettings"
         android:title="@string/interface_settings_title" />
 
