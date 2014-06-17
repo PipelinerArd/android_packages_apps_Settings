@@ -21,6 +21,7 @@
     <string name="attention">Attention</string>
     <string name="enabled">Enabled</string>
     <string name="default_string">Default</string>
+    <string name="additional_options_title">Additional options</string>
     <string name="header_category_rom_settings">AOSPA Mods</string>
     <string name="interface_settings_title">Interface</string>
 
