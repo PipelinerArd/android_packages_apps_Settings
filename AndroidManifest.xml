@@ -1771,6 +1771,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".slim.InterfaceSettings" />
+
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"
                 android:exported="false"
