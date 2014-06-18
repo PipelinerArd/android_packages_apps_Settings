@@ -34,8 +34,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String TAG = "SoundSettings";
 
     private static final String KEY_VOLBTN_MUSIC_CTRL = "volbtn_music_controls";
+    private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
 
     private CheckBoxPreference mVolBtnMusicCtrl;
+    private CheckBoxPreference mVolumeWake;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,13 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mVolBtnMusicCtrl.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.VOLUME_MUSIC_CONTROLS, 1) != 0);
         mVolBtnMusicCtrl.setOnPreferenceChangeListener(this);
+        
+        mVolumeWake = (CheckBoxPreference) findPreference(KEY_VOLUME_WAKE);
+        if (mVolumeWake != null) {
+            mVolumeWake.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
+            mVolumeWake.setOnPreferenceChangeListener(this);
+        }
 
     }
 
@@ -60,6 +69,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         if (KEY_VOLBTN_MUSIC_CTRL.equals(key)) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.VOLUME_MUSIC_CONTROLS,
+                    (Boolean) objValue ? 1 : 0);
+        }
+        if (KEY_VOLUME_WAKE.equals(key)) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.VOLUME_WAKE_SCREEN,
                     (Boolean) objValue ? 1 : 0);
         }
 
