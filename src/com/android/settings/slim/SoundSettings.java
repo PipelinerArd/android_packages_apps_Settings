@@ -68,6 +68,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ContentResolver resolver = getActivity().getContentResolver();
 
         addPreferencesFromResource(R.xml.slim_sound_settings);
 
@@ -88,11 +89,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mPowerSoundsVibrate = (CheckBoxPreference) findPreference(KEY_POWER_NOTIFICATIONS_VIBRATE);
         mPowerSoundsVibrate.setChecked(Settings.Global.getInt(getContentResolver(),
                 Settings.Global.POWER_NOTIFICATIONS_VIBRATE, 0) != 0);
-
-        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        if (vibrator == null || !vibrator.hasVibrator()) {
-            removePreference(KEY_POWER_NOTIFICATIONS_VIBRATE);
-        }
 
         mPowerSoundsRingtone = findPreference(KEY_POWER_NOTIFICATIONS_RINGTONE);
         String currentPowerRingtonePath =
@@ -141,28 +137,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             mPowerSoundsVibrate.setOnPreferenceChangeListener(this);
         }
 
-        mPowerSoundsRingtone = findPreference(KEY_POWER_NOTIFICATIONS_RINGTONE);
-        String currentPowerRingtonePath =
-                Settings.Global.getString(getContentResolver(),
-                    Settings.Global.POWER_NOTIFICATIONS_RINGTONE);
-
-        // set to default notification if we don't yet have one
-        if (currentPowerRingtonePath == null) {
-                currentPowerRingtonePath = Settings.System.DEFAULT_NOTIFICATION_URI.toString();
-                Settings.Global.putString(getContentResolver(),
-                        Settings.Global.POWER_NOTIFICATIONS_RINGTONE, currentPowerRingtonePath);
-        }
-        // is it silent ?
-        if (currentPowerRingtonePath.equals(POWER_NOTIFICATIONS_SILENT_URI)) {
-            mPowerSoundsRingtone.setSummary(
-                    getString(R.string.power_notifications_ringtone_silent));
-        } else {
-            final Ringtone ringtone =
-                    RingtoneManager.getRingtone(getActivity(), Uri.parse(currentPowerRingtonePath));
-            if (ringtone != null) {
-                mPowerSoundsRingtone.setSummary(ringtone.getTitle(getActivity()));
-            }
-        }
     }
 
     @Override
