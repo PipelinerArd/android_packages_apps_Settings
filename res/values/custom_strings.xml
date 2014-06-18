@@ -113,12 +113,6 @@
     <string name="safe_headset_volume_summary">Prevent loud volume levels when headset is first plugged in</string>
     <string name="safe_headset_volume_warning_dialog_text">Listening at high volume for long periods may damage your hearing. Disable it with caution.</string>
     
-    <!-- Volume tweaks -->
-    <string name="volume_adjust_sounds_enable_title">Volume adjust sound</string>
-    <string name="volume_adjust_sounds_enable_summary">Play sound when adjusting volume with hard keys</string>
-    <string name="link_volume_ringtones">Link ringtone &amp; notifications volumes</string>
-    <string name="volume_ring_only_description">Ringtone</string>
-    
     <!-- Category title for power sound notification specific Settings.
          [CHAR LIMIT=40] -->
     <string name="power_notifications_category_title">Power connectivity alert</string>
