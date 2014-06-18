@@ -22,8 +22,8 @@
     <string name="enabled">Enabled</string>
     <string name="default_string">Default</string>
     <string name="additional_options_title">Additional options</string>
-    <string name="header_category_rom_settings">AOSPA Mods</string>
-    <string name="interface_settings_title">Interface</string>
+    <string name="header_category_rom_settings">Interface</string>
+    <string name="interface_settings_title">AOSPA Mods</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
